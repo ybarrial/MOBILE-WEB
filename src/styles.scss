@@ -460,6 +460,30 @@ body {
 /* ==========================
   GENERAL-SELECT
 ========================== */
+// select.general-select {
+//   appearance: none;
+//   -webkit-appearance: none;
+//   -moz-appearance: none;
+
+//   position: relative;
+//   display: inline-flex;
+//   align-items: center;
+
+//   font-size: 0.8rem;
+//   padding: 6px 30px 6px 12px;
+
+//   background-color: white;
+//   color: black !important;
+
+//   cursor: pointer;
+//   height: 32px !important;
+
+//   transition:
+//     transform 0.15s ease,
+//     filter 0.15s ease,
+//     background-color 0.15s ease;
+// }
+
 select.general-select {
   appearance: none;
   -webkit-appearance: none;
@@ -472,7 +496,11 @@ select.general-select {
   font-size: 0.8rem;
   padding: 6px 30px 6px 12px;
 
+  border-radius: 20px;
+  border: 2px solid var(--primary-color);
+
   background-color: white;
+  /* ✅ fondo blanco */
   color: black !important;
 
   cursor: pointer;
@@ -538,8 +566,8 @@ select.general-select:disabled {
    Dropdown (options)
 ========================== */
 select.general-select option {
-  background-color: var(--primary-color);
+  //background-color: var(--primary-color);
   /* ✅ dropdown azul */
-  color: var(--text-on-primary);
+  color: black;
   /* texto blanco */
 }

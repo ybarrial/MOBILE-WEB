@@ -5,6 +5,7 @@ import { provideServiceWorker } from '@angular/service-worker';
 import { environment } from './environments/environment';
 import { appConfig } from './app/app.config'; // tu configuración adicional si es que tiene providers, imports, etc.
 import { enableProdMode } from '@angular/core';
+import { DatePipe } from '@angular/common';
 
 
 if (environment.production) {
@@ -18,6 +19,7 @@ if (environment.production) {
 bootstrapApplication(AppComponent, {
   ...appConfig, // spread de tu configuración existente
   providers: [
+    DatePipe,
     ...(appConfig.providers || []), // mantener otros providers si los tienes
     ...(environment.production ? [provideServiceWorker('ngsw-worker.js')] : []),
   ],
