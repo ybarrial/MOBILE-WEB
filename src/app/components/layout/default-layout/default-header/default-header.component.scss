@@ -1,0 +1,131 @@
+:host {
+  display: block;
+  width: 100%;     /* ✅ esto es CLAVE */
+}
+
+.app-header {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  z-index: 1000;
+}
+
+/* Barra principal */
+.nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+/* Empuja el user-area a la derecha */
+.spacer {
+  flex: 1;
+}
+
+/* Botón toggle */
+.btn-toggle {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-toggle i {
+  font-size: 1.8rem;   /* Icono grande */
+}
+
+/* Área usuario */
+.user-area {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.user-icon {
+  font-size: 1.2rem;   /* Icono grande */
+}
+
+.arrow {
+  font-size: 1.2rem;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 56px;
+  right: 10px;
+  background: #ffffff;
+  color: #333;
+  min-width: 350px;
+  border-radius: 6px;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+  padding: 12px;
+  z-index: 2000;
+}
+
+/* Cada fila en dos columnas */
+.row {
+  display: grid;
+  grid-template-columns: 90px 1fr;  /* ancho fijo para el título */
+  gap: 6px;
+  font-size: 13px;
+  margin-bottom: 6px;
+  align-items: center;
+}
+
+.label {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.value {
+  word-break: break-word;
+}
+.dropdown-btn {
+  width: 100%;
+  border: none;
+  background: transparent;
+  padding: 3px !important;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.8rem !important;
+}
+
+.dropdown-btn:hover {
+  background: #f2f2f2;
+}
+
+.dropdown-btn.danger {
+  color: #c62828;
+}
+
+.mensaje-header {
+  font-family: var(--app-font-family) !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  color: white !important;
+}
+
+.perfil-header {
+  background-color: var(--primary-color) !important;
+  font-family: var(--app-font-family) !important;
+  font-weight: 600 !important;
+  font-size: 1rem !important;
+  color: white !important;
+  height: 40px !important;
+  padding: 8px !important;
+  margin-bottom: 10px !important;
+  border-radius: 11px !important;
+}

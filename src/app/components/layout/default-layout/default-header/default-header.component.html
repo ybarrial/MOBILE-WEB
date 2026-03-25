@@ -1,0 +1,63 @@
+<header class="app-header">
+  <div class="nav-bar">
+
+    <!-- Botón toggle -->
+    <button *ngIf="muestraBotonToogle" class="btn-toggle" (click)="onToggleSidebar()">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <span *ngIf="isDesktop" class="mensaje-header me-4">TIPO DE CAMBIO: S/ {{tipoCambioVenta}}</span>
+    <span *ngIf="!isDesktop" class="mensaje-header me-4">T.C.: S/ {{tipoCambioVenta}}</span>
+    <span class="mensaje-header">{{isDesktop ? currentDateLarge : currentDateShort}}</span>
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- User area -->
+    <div class="user-area" (click)="toggleDropdown()">
+      <i class="fas fa-user user-icon"></i>
+      <span class="arrow">▾</span>
+
+      <div class="dropdown" *ngIf="showDropdown" style="font-family: var(--app-font-family) !important;">
+
+        <div class="perfil-header">Perfil</div>
+
+        <div class="row">
+          <span class="label">User Name:</span>
+          <span class="value">{{dtoUser.userUsername}}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Empresa:</span>
+          <span class="value">AQUARIUS CONSULTING</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Usuario:</span>
+          <span class="value">{{dtoUser.userLastName + ' ' + dtoUser.userMiddleName + ' ' + dtoUser.userName}}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Email:</span>
+          <span class="value">{{dtoUser.userEmail}}</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Perfil:</span>
+          <span class="value">JEFE DE PROYECTO</span>
+        </div>
+
+        <div class="row">
+          <span class="label">Área:</span>
+          <span class="value">SISTEMAS Y TECNOLOGÍAS</span>
+        </div>
+
+        <hr />
+
+        <button class="dropdown-btn" (click)="onChangePassword()">Cambiar contraseña</button>
+        <hr />
+        <button class="dropdown-btn danger" (click)="onLogout()">Cerrar sesión</button>
+      </div>
+    </div>
+
+  </div>
+</header>

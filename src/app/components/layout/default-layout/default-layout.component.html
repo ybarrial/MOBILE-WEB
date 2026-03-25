@@ -1,0 +1,93 @@
+
+<div class="layout" [class.no-sidebar]="!isDesktop || !isSidebarVisible">
+  <aside *ngIf="isDesktop && isSidebarVisible" class="sidebar">
+      <div class="logo-container">
+    <img src="assets/images/brand/logo regina.png" width="60%">
+  </div>
+    <app-sidebar></app-sidebar>
+  </aside>
+
+  <header class="header">
+    <app-default-header (toggleSidebar)="toggleSidebar()"></app-default-header>
+  </header>
+
+  <main class="content">
+    <div class="content-inner">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- Botón flotante Regina -->
+  <div
+    *ngIf="showReginaIcon"
+    class="regina-chat-slot"
+    (click)="toggleReginaChat()">
+
+    <img
+      src="assets/images/icono-chatbot.png"
+      alt="Regina"
+      class="regina-chat-icon" />
+  </div>
+
+  <!-- Panel de chat -->
+  <div class="regina-chat-panel" *ngIf="showReginaChat">
+
+    <div class="regina-chat-header">
+      <span>Charla con Regina</span>
+      <button type="button" (click)="toggleReginaChat()">✕</button>
+    </div>
+
+    <div class="regina-chat-body">
+
+      <div class="regina-messages">
+        <div
+          *ngFor="let m of messages"
+          class="msg"
+          [class.user]="m.from === 'user'"
+          [class.bot]="m.from === 'bot'">
+
+          <b>{{ m.from === 'user' ? 'Tú' : 'Regina' }}:</b>
+          {{ m.text }}
+        </div>
+      </div>
+
+      <div class="regina-input">
+
+        <div class="voice-input-wrapper">
+
+          <input
+            type="text"
+            [(ngModel)]="userInput"
+            placeholder="Escribe a Regina..."
+            [disabled]="isListening" />
+
+          <div class="voice-wave" *ngIf="isListening"></div>
+
+        </div>
+
+        <button
+          type="button"
+          class="mic"
+          (click)="toggleMic()">
+
+          <i
+            class="fa"
+            [ngClass]="isListening ? 'fa-microphone-slash' : 'fa-microphone'">
+          </i>
+
+        </button>
+
+        <button
+          type="button"
+          class="send"
+          (click)="enviarTexto()">➤</button>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<app-default-footer></app-default-footer>
+<app-default-footer-mobile *ngIf="!isDesktop"></app-default-footer-mobile>

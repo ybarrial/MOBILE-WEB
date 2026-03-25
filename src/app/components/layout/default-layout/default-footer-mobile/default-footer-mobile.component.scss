@@ -1,0 +1,141 @@
+.app-default-footer-mobile {
+  width: 100%;
+  text-align: center;
+  font-size: 0.7rem !important;
+  background-color: var(--primary-color);
+  color: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding-top: 10px;
+  height: 100px !important;
+}
+
+:host {
+  font-family: var(--app-font-family, Arial, sans-serif);
+}
+
+/* =========================
+   Footer Navbar
+========================= */
+.navbar-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 🔹 ahora todo inicia desde la izquierda */
+  padding: 6px 10px;
+  z-index: 1000;
+}
+
+/* =========================
+   Botones principales
+========================= */
+.navbar-buttons {
+  display: flex;
+  justify-content: flex-start; /* 🔹 alineación izquierda */
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 4px;
+  width: 100%;
+}
+
+.nav-item-wrapper {
+  position: relative;
+  flex: 0 0 auto; /* 🔹 evita que se expandan */
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  min-width: 60px;
+  height: 60px;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  gap: 2px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.nav-item:hover {
+  background: var(--primary-color);
+}
+
+.nav-item i {
+  font-size: 1.3rem;
+}
+
+/* =========================
+   Subitems
+========================= */
+.subitems-container {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  background: var(--primary-color);
+  border-radius: 12px;
+  padding: 8px;
+  min-width: 180px;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border: 2px solid white;
+}
+
+.subitems-container.open {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.subitem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  background: transparent;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-align: left;
+  transition: background 0.2s, border 0.2s;
+}
+
+.subitem i {
+  font-size: 1rem;
+}
+
+.subitem:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+}
+
+/* =========================
+   Footer text
+========================= */
+.footer-text {
+  width: 100%;
+  text-align: center;
+  font-size: 0.6rem;
+  color: white;
+  border-top: 1px solid white;
+  padding-top: 2px;
+  background-color: black;
+}

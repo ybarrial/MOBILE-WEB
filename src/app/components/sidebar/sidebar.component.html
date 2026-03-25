@@ -1,0 +1,27 @@
+<aside class="sidebar">
+  <div class="menu-header" style="cursor: pointer;" (click)="home()">
+    <i class="fas fa-home"></i>
+    <span>Inicio</span>
+  </div>
+
+  <div class="menu-item" *ngFor="let item of items">
+
+    <div class="menu-header" (click)="toggle(item)">
+      <i [class]="item.icon"></i>
+      <span>{{ item.label }}</span>
+      <i class="arrow" [class.rotate]="item.expanded">▸</i>
+    </div>
+
+    <div class="submenu" *ngIf="item.expanded">
+      <div
+        class="submenu-item"
+        *ngFor="let sub of item.subitems"
+        (click)="navigate(sub, $event)">
+        <i [class]="sub.icon"></i>
+        <span>{{ sub.label }}</span>
+      </div>
+    </div>
+
+  </div>
+
+</aside>
