@@ -35,54 +35,6 @@ export const routes: Routes = [
         path: 'home',
         component: HomeComponent
       },
-      {
-        path: 'list-orders',
-        component: ListOrdenPagoComponent
-      },
-      {
-        path: 'edit-rendir-cuenta',
-        component: EditRendirCuentaComponent
-      },
-      {
-        path: 'list-orders-detail',
-        component: ListOrdenPagoDetComponent
-      },
-      {
-        path: 'list-solicitudes',
-        component: ListSolicitudComponent
-      },
-      {
-        path: 'edit-solicitud',
-        component: EditSolicitudComponent
-      },
-      {
-        path: 'list-usuarios',
-        component: ListUsuariosComponent
-      },
-      {
-        path: 'edit-usuario',
-        component: EditUsuarioComponent
-      },
-      {
-        path: 'list-perfiles',
-        component: ListPerfilesComponent
-      },
-      {
-        path: 'edit-perfil',
-        component: EditPerfilComponent
-      },
-      {
-        path: 'list-validaciones',
-        component: ListValidacionesComponent
-      },
-      {
-        path: 'edit-validacion',
-        component: EditRegRenValidateComponent
-      },
-      {
-        path: 'settings',
-        component: SettingsComponent
-      }
     ]
   }
 ];
